@@ -1,0 +1,13 @@
+[
+  {
+    "__Key__": "8d2ed0eb-5121-4ae3-8835-92de654ee83a",
+    "Id": "8d2ed0eb-5121-4ae3-8835-92de654ee83a",
+    "AuthenticationType": "",
+    "BasicAuthCredentialPassword": "",
+    "BasicAuthCredentialUsername": "",
+    "CertificateCredentialFilePath": "",
+    "CertificateCredentialPassword": "",
+    "EngineApiUrl": "http://192.168.218.128:2375",
+    "Name": "Test"
+  }
+]

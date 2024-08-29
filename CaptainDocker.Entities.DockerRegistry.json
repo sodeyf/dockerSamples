@@ -1,0 +1,18 @@
+[
+  {
+    "__Key__": "ef8ca006-94bc-47d0-83de-f2f2c5679003",
+    "Id": "ef8ca006-94bc-47d0-83de-f2f2c5679003",
+    "Address": "registry.hub.docker.com",
+    "Name": "Test",
+    "Password": "",
+    "Username": ""
+  },
+  {
+    "__Key__": "a97e2a23-3fbc-42ae-a4f2-b3bb554296ce",
+    "Id": "a97e2a23-3fbc-42ae-a4f2-b3bb554296ce",
+    "Address": "http://192.168.218.128:5000/",
+    "Name": "docker-registry",
+    "Password": "",
+    "Username": ""
+  }
+]

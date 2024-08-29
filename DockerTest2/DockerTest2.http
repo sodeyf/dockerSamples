@@ -1,0 +1,6 @@
+@DockerTest2_HostAddress = http://192.168.218.128:2375
+
+GET {{DockerTest2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

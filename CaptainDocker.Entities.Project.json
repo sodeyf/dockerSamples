@@ -1,0 +1,10 @@
+[
+  {
+    "__Key__": "f27fc9a9-b092-49e7-9b3d-05b194214614",
+    "Id": "f27fc9a9-b092-49e7-9b3d-05b194214614",
+    "Directory": "C:\\Projects\\TestDocker\\DockerTest2",
+    "Dockerfile": "C:\\Projects\\TestDocker\\DockerTest2\\Dockerfile",
+    "ImageName": "v1",
+    "Name": "DockerTest2"
+  }
+]
