@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commands-depl
+  labels:
+    app: platformservice
+spec:
+  replicas: 1 # Number of pods
+  selector:
+    matchLabels:
+      app: commandsservice
+  template:
+    metadata:
+      labels:
+        app: commandsservice
+    spec:
+      containers:
+      - name: commandsservice
+        image: localhost:5000/commandsservice:latest # Use the image pushed to the registry
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production" # Set environment variables if needed
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: commands-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: commandsservice
+  ports:
+  - name: commandsservice
+    protocol: TCP
+    port: 80
+    targetPort: 80

@@ -5,6 +5,21 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerTest2", "DockerTest2\DockerTest2.csproj", "{07321683-D11B-4D24-8203-9201190037BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "K8S", "K8S", "{EB8B08A5-D700-4D72-A81D-04494D6AEE28}"
+	ProjectSection(SolutionItems) = preProject
+		K8S\commands-depl.yaml = K8S\commands-depl.yaml
+		K8S\deploy.yaml = K8S\deploy.yaml
+		K8S\ingress-srv.yaml = K8S\ingress-srv.yaml
+		K8S\platforms-depl.yaml = K8S\platforms-depl.yaml
+		K8S\platforms-srv.yaml = K8S\platforms-srv.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{9D59FAB3-6771-4433-80F7-150D0C5A31E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandsService", "Kubernetes\CommandsService\CommandsService.csproj", "{A302C345-02E0-4171-984B-03A8C06509BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatformService", "Kubernetes\PlatformService\PlatformService.csproj", "{37B37F2A-8586-4E85-AFE4-39411424ADCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +30,21 @@ Global
 		{07321683-D11B-4D24-8203-9201190037BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07321683-D11B-4D24-8203-9201190037BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07321683-D11B-4D24-8203-9201190037BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A302C345-02E0-4171-984B-03A8C06509BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A302C345-02E0-4171-984B-03A8C06509BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A302C345-02E0-4171-984B-03A8C06509BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A302C345-02E0-4171-984B-03A8C06509BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B37F2A-8586-4E85-AFE4-39411424ADCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B37F2A-8586-4E85-AFE4-39411424ADCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B37F2A-8586-4E85-AFE4-39411424ADCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B37F2A-8586-4E85-AFE4-39411424ADCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A302C345-02E0-4171-984B-03A8C06509BB} = {9D59FAB3-6771-4433-80F7-150D0C5A31E3}
+		{37B37F2A-8586-4E85-AFE4-39411424ADCB} = {9D59FAB3-6771-4433-80F7-150D0C5A31E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {300843E0-3A0F-4CB3-9F2F-AA61AB85877F}

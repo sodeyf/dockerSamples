@@ -5,3 +5,9 @@
 /.vs
 /DockerTest2/bin
 /DockerTest2/obj
+
+/Kubernetes/PlatformService/bin
+/Kubernetes/PlatformService/obj
+
+/Kubernetes/CommandsService/bin
+/Kubernetes/CommandsService/obj
