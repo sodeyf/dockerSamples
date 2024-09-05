@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mssql-claim
+spec:
+  accessModes:
+    - ReadWriteMany                 # Access mode; must match the PV
+#  storageClassName: manual          # Should match the PV's storageClassName
+  resources:
+    requests:
+      storage: 59Mi                  # Requested storage; should not exceed the PV capacity
