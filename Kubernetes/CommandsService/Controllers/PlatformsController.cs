@@ -1,5 +1,9 @@
+using AutoMapper;
+using CommandsService.Data;
+using CommandsService.DTOs;
 using CommandsService.Heplers;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections;
 
 namespace CommandsService.Controllers
 {
@@ -7,11 +11,22 @@ namespace CommandsService.Controllers
     [Route("api/c/[controller]")]
     public class PlatformsController : ControllerBase
     {
-        private readonly ILogger<PlatformsController> _logger;
+        private readonly ICommandRepo _repository;
+        private readonly IMapper _mapper;
 
-        public PlatformsController(ILogger<PlatformsController> logger)
+        public PlatformsController(ICommandRepo repository, IMapper mapper)
         {
-            _logger = logger;
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<PlatformReadDTO>> GetPlatforms()
+        {
+            Utils.Write("--> Getting Platforms from commandsService");
+
+            var platformsItems = _repository.GetAllPlatforms();
+            return Ok(_mapper.Map<IEnumerable<PlatformReadDTO>>(platformsItems));
         }
 
         [HttpPost]
