@@ -17,10 +17,24 @@ builder.WebHost.ConfigureKestrel(options =>
 
 // Add services to the container.
 
-builder.Services.AddDbContext<AppDbContext>(opt =>
+var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+var isProduction = environment == Environments.Production;
+if (isProduction)
 {
-    opt.UseInMemoryDatabase("inMem");
-});
+    Utils.Write("-->Using SqlServer Db");
+    builder.Services.AddDbContext<AppDbContext>(opt =>
+    {
+        opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn"));
+    });
+}
+else
+{
+    Utils.Write("-->Using InMem Db");
+    builder.Services.AddDbContext<AppDbContext>(opt =>
+    {
+        opt.UseInMemoryDatabase("inMem");
+    });
+}
 
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
@@ -45,6 +59,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-PrebDb.PrepPopulation(app);
+PrebDb.PrepPopulation(app, isProduction);
 
 app.Run();
